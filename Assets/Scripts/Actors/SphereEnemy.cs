@@ -8,7 +8,6 @@ public class SphereEnemy : Enemy
     {
         get { return _speed; }
         set { _speed = value; }
-
     }
 
 
@@ -29,6 +28,5 @@ public class SphereEnemy : Enemy
     public override void Update()
     {
         base.Update();
-        Debug.Log(target);
     }
 }

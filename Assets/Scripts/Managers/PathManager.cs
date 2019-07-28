@@ -21,14 +21,9 @@ public class PathManager : MonoBehaviour
         }
     }
 
-
-    private void Update()
-    {
-
-    }
-
     private void OnDrawGizmos()
     {
+        //just to visually see the path which we are drawing ..
         Gizmos.color = Color.red;
         for (int i = 0; i < _waypoints.Count; i++)
         {
@@ -38,4 +33,5 @@ public class PathManager : MonoBehaviour
             }
         }
     }
+
 }
