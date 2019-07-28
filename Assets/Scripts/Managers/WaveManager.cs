@@ -24,9 +24,9 @@ public class WaveManager : MonoBehaviour
 
     private void Awake()
     {
+        ResetEnemySpawnDelay();
         CountDownTimer = InitialCountDown;
         ResetDelay();
-        _enemySpawnDelay = new WaitForSeconds(_spawnDelay);
     }
 
     private void Update()
@@ -71,22 +71,31 @@ public class WaveManager : MonoBehaviour
         Debug.Log("Wave spawned ...");
         StartCoroutine(DelayedSpawn());
     }
-                                                                                                                         
+
     private IEnumerator DelayedSpawn()
     {
+        float stopwatch = 0f;
         ObjectPooler pooler = ObjectPooler.Instance;
 
-       
-            for (int j = 0; j < Wave.Waves[_waveIndex].Amount; j++)
-            {
-                pooler.SpawnFromPool(Wave.Waves[_waveIndex].EnemyType,
-                    Wave.Waves[_waveIndex].StartingPoint.position,
-                    Wave.Waves[_waveIndex].StartingPoint.rotation);
-                yield return _enemySpawnDelay;
-            }
-      
-        _waveIndex++;
 
+        for (int j = 0; j < Wave.Waves[_waveIndex].Amount; j++)
+        {
+            pooler.SpawnFromPool(Wave.Waves[_waveIndex].EnemyType,
+                Wave.Waves[_waveIndex].StartingPoint.position,
+                Wave.Waves[_waveIndex].StartingPoint.rotation);
+
+            stopwatch += Time.deltaTime * 15;
+            yield return _enemySpawnDelay;
+        }
+
+        _waveIndex++;
+        WaveDelay += stopwatch*_waveIndex;
+
+    }
+
+    private void ResetEnemySpawnDelay()
+    {
+        _enemySpawnDelay = new WaitForSeconds(_spawnDelay);
     }
 
     private void ResetTimer()
