@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour,IPooledObject
 {
     [SerializeField]
     public virtual float speed { get;  set; }
@@ -12,6 +12,7 @@ public abstract class Enemy : MonoBehaviour
     public abstract bool DoOnce { get; set; }
     public abstract PathManager manager { get; set; }
 
+    public abstract PooledObjectType type { get; set; }
 
     public virtual void Start()
     {
@@ -38,5 +39,19 @@ public abstract class Enemy : MonoBehaviour
             DoOnce=false;
         }
 
+    }
+
+    public virtual void Despawn()
+    {
+        ObjectPooler.Instance.Despawn(type, this.gameObject);
+    }
+
+    public void OnObjectSpawn()
+    {
+        WaypointIndex = 0;
+    }
+
+    public void OnObjectDespawn()
+    {
     }
 }

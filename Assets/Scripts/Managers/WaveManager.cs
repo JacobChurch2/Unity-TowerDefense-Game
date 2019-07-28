@@ -9,24 +9,29 @@ public class WaveManager : MonoBehaviour
 
     [Header("Timing")]
     public float CountDownTimer = 10f;
-    public float Delay = 2f;
+    public float InitialCountDown = 3f;
+    public float WaveDelay = 2f;
+    [SerializeField]
+    private float _spawnDelay = 1f;
+
     [Header("Wave Details")]
-    public int WaveAmount = 1;
     private int _waveIndex = 0;
     private float _delay;
     private float _countDownTimer;
-
     private bool _isWaveSpawned;
+
+    private WaitForSeconds _enemySpawnDelay;
 
     private void Awake()
     {
-        ResetTimer();
+        CountDownTimer = InitialCountDown;
         ResetDelay();
+        _enemySpawnDelay = new WaitForSeconds(_spawnDelay);
     }
 
     private void Update()
     {
-        if (_waveIndex!=WaveAmount-1)
+        if (_waveIndex != Wave.Waves.Count)
         {
             if (_countDownTimer <= 0 && !_isWaveSpawned)
             {
@@ -58,13 +63,30 @@ public class WaveManager : MonoBehaviour
             Debug.Log("No more waves ... ");
         }
 
-     
+
     }
 
     private void SpawnWave()
     {
         Debug.Log("Wave spawned ...");
+        StartCoroutine(DelayedSpawn());
+    }
+                                                                                                                         
+    private IEnumerator DelayedSpawn()
+    {
+        ObjectPooler pooler = ObjectPooler.Instance;
+
+       
+            for (int j = 0; j < Wave.Waves[_waveIndex].Amount; j++)
+            {
+                pooler.SpawnFromPool(Wave.Waves[_waveIndex].EnemyType,
+                    Wave.Waves[_waveIndex].StartingPoint.position,
+                    Wave.Waves[_waveIndex].StartingPoint.rotation);
+                yield return _enemySpawnDelay;
+            }
+      
         _waveIndex++;
+
     }
 
     private void ResetTimer()
@@ -74,6 +96,6 @@ public class WaveManager : MonoBehaviour
 
     private void ResetDelay()
     {
-        _delay = Delay;
+        _delay = WaveDelay;
     }
 }

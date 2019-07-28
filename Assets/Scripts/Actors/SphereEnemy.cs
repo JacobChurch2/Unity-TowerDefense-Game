@@ -10,23 +10,30 @@ public class SphereEnemy : Enemy
         set { _speed = value; }
     }
 
-
+    [SerializeField] private PooledObjectType _type;
+    public override PooledObjectType type { get; set; }
     public override bool DoOnce { get; set; }
     public override int WaypointIndex { get; set; }
     public override Transform target { get; set; }
     public override PathManager manager { get; set; }
 
     public float _speed = 10f;
+    
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        type = _type;
+
+    }
+
     public override void Start()
     {
         base.Start();
     }
 
-    // Update is called once per frame
     public override void Update()
     {
         base.Update();
     }
+
 }

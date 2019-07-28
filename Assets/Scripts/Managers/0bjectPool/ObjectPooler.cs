@@ -45,11 +45,15 @@ public class ObjectPooler : MonoBehaviour
         }
     }
 
-    public GameObject SpawnFromPool(string tag, Vector3 pos, Quaternion rot)
+    public GameObject SpawnFromPool(PooledObjectType tag, Vector3 pos, Quaternion rot)
     {
-        if (!PoolDictionary.ContainsKey(tag)) { Debug.LogWarning("PoolObjects with Tag " + tag + " doesn't exist .."); return null; }
+        if (!PoolDictionary.ContainsKey(tag.ToString()))
+        {
+            Debug.LogWarning("PoolObjects with Tag " + tag + " doesn't exist ..");
+            return null;
+        }
 
-        GameObject objToSpawn = PoolDictionary[tag].Dequeue();
+        GameObject objToSpawn = PoolDictionary[tag.ToString()].Dequeue();
         objToSpawn.SetActive(true);
         objToSpawn.transform.position = pos;
         objToSpawn.transform.rotation = rot;
@@ -58,13 +62,13 @@ public class ObjectPooler : MonoBehaviour
 
         if (iPooledObj != null) iPooledObj.OnObjectSpawn();
 
-        PoolDictionary[tag].Enqueue(objToSpawn);
+        PoolDictionary[tag.ToString()].Enqueue(objToSpawn);
         return objToSpawn;
     }
 
-    public void Despawn(PooledObjectType tag)
+    public void Despawn(PooledObjectType tag,GameObject objToDespawn)
     {
-        GameObject objToDespawn = PoolDictionary[tag.ToString()].Dequeue();
+        PoolDictionary[tag.ToString()].Enqueue(objToDespawn);
         objToDespawn.SetActive(false);
         objToDespawn.transform.position = Vector3.zero;
         IPooledObject iPooledObj = objToDespawn.GetComponent<IPooledObject>();
