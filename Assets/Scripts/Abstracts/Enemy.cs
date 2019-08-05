@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour,IPooledObject
+public abstract class Enemy : Actor,IPooledObject
 {
     [SerializeField]
     public virtual float speed { get;  set; }
@@ -13,7 +13,7 @@ public abstract class Enemy : MonoBehaviour,IPooledObject
     public abstract PathManager manager { get; set; }
 
     public abstract PooledObjectType type { get; set; }
-
+     
     public virtual void Start()
     {
         WaypointIndex = 0;
@@ -25,7 +25,9 @@ public abstract class Enemy : MonoBehaviour,IPooledObject
     {
         target = manager._waypoints[WaypointIndex];
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        transform.Translate(
+            dir.normalized * speed * Time.deltaTime
+            , Space.World);
 
         float dist = (transform.position - target.position).sqrMagnitude;
 
@@ -53,5 +55,6 @@ public abstract class Enemy : MonoBehaviour,IPooledObject
 
     public void OnObjectDespawn()
     {
+
     }
 }

@@ -6,11 +6,15 @@ public class End : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TRIGGERED");
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Debug.Log("Enemy !");
+            PlayerTakeDamage();
             ObjectPooler.Instance.Despawn(other.gameObject.GetComponent<Enemy>().type,other.gameObject);
         }
+    }
+
+    private void PlayerTakeDamage()
+    {
+
     }
 }

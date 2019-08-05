@@ -31,6 +31,11 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
+        WaveSystem();
+    }
+
+    private void WaveSystem()
+    {
         if (_waveIndex != Wave.Waves.Count)
         {
             if (_countDownTimer <= 0 && !_isWaveSpawned)
@@ -60,15 +65,13 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No more waves ... ");
+            //NO MORE WAVES
         }
-
-
     }
 
     private void SpawnWave()
     {
-        Debug.Log("Wave spawned ...");
+        //wave spawned
         StartCoroutine(DelayedSpawn());
     }
 
@@ -89,7 +92,7 @@ public class WaveManager : MonoBehaviour
         }
 
         _waveIndex++;
-        WaveDelay += stopwatch*_waveIndex;
+        WaveDelay += stopwatch * _waveIndex;
 
     }
 

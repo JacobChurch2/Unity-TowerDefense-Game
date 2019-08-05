@@ -3,22 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Ally : MonoBehaviour
+public abstract class Ally : Actor
 {
-    private protected abstract float FireRate { get; set; }
     private protected abstract Transform CurrentTarget { get; set; }
-    private protected abstract float damage { get; set; }
-
-    public virtual void Fire()
-    {
-        Debug.Log("Fire");
-        DealDamage();
-    }
-
-    public virtual void DealDamage()
-    {
-        Debug.Log("Deal Damage..");
-    }
 
     public virtual float Radius
     {
@@ -28,13 +15,14 @@ public abstract class Ally : MonoBehaviour
 
     [SerializeField] private float _radius = 10;
     [SerializeField] private Transform _currentTarget;
+    public float _rotatingSpeed = 2f;
 
     public virtual void Start()
     {
         //InvokeRepeating("UpdateTarget",0,.5f);
     }
 
-    void Update()
+    public  virtual void Update()
     {
         UpdateTarget();
     }
@@ -49,13 +37,11 @@ public abstract class Ally : MonoBehaviour
             layermask);
 
 
-        Debug.Log(enemies + "  " + enemies.Length);
         float dist = Mathf.Infinity;
 
         foreach (var col in enemies)
         {
             float tempDist = CalculateDistance(col.transform);
-            Debug.Log(tempDist);
             if (tempDist < dist)
             {
                 dist = tempDist;
@@ -68,7 +54,7 @@ public abstract class Ally : MonoBehaviour
 
     }
 
-    void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, Radius);
     }
@@ -89,7 +75,7 @@ public abstract class Ally : MonoBehaviour
         Quaternion targetRotation = Quaternion.Lerp(
             transform.GetChild(0).rotation,
             Quaternion.Euler(0, rotation.y, 0),
-            2 * Time.deltaTime
+            _rotatingSpeed * Time.deltaTime
         );
 
         transform.GetChild(0).rotation = targetRotation;

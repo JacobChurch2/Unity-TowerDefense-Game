@@ -18,12 +18,10 @@ public class SphereEnemy : Enemy
     public override PathManager manager { get; set; }
 
     public float _speed = 10f;
-    
 
     private void Awake()
     {
         type = _type;
-
     }
 
     public override void Start()

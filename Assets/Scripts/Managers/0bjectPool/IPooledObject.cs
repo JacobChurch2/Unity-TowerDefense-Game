@@ -2,4 +2,5 @@
 {
     void OnObjectSpawn();
     void OnObjectDespawn();
+    void Despawn();
 }
