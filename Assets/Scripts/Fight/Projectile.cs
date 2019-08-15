@@ -74,9 +74,6 @@ public class Projectile : MonoBehaviour, IPooledObject
         int enemy = 1 << LayerMask.NameToLayer("Enemy");
         int temp = 1 << other.gameObject.layer;
 
-
-        Debug.Log(temp + "  " + enemy);
-
         if (temp == enemy)
         {
             Hit();

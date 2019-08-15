@@ -7,6 +7,8 @@ public abstract class Enemy : Actor,IPooledObject
     [SerializeField]
     public virtual float speed { get;  set; }
 
+    private Vector3 _explosionPoint;
+
     public abstract Transform target { get;  set; }
     public abstract int WaypointIndex { get;  set; }
     public abstract bool DoOnce { get; set; }
@@ -45,6 +47,7 @@ public abstract class Enemy : Actor,IPooledObject
 
     public virtual void Despawn()
     {
+        _explosionPoint = transform.position;
         ObjectPooler.Instance.Despawn(type, this.gameObject);
     }
 
@@ -55,6 +58,12 @@ public abstract class Enemy : Actor,IPooledObject
 
     public void OnObjectDespawn()
     {
+       GameObject go = ObjectPooler.Instance.SpawnFromPool(
+           PooledObjectType.BlueExplosion,
+           _explosionPoint, 
+           Quaternion.identity);
+
+       
 
     }
 }
