@@ -1,6 +1,5 @@
 ﻿public enum PooledObjectType
 {
-    SphereEnemy,
-    DummyEnemy,
-    DummyEnemy1
+    SphereEnemy=0,
+    SpearBullet=1,
 }

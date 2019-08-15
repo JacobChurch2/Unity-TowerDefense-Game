@@ -6,6 +6,8 @@ using UnityEngine;
 public class Turret : Ally
 {
     private protected override Transform CurrentTarget { get; set; }
+    [SerializeField] private protected Transform _firingPoint;
+
     [SerializeField] private float _damage = 1f;
     private protected virtual float _fireRate
     {
@@ -52,15 +54,14 @@ public class Turret : Ally
 
     public virtual void Fire()
     {
-        Debug.Log("Fired " + gameObject.name, gameObject);
-        DealDamage();
+        GameObject go = ObjectPooler.Instance.SpawnFromPool(
+            PooledObjectType.SpearBullet, _firingPoint.position,
+            Quaternion.identity);
+
+        //DealDamage();
+
+        go.GetComponent<Projectile>().SetProjectile(CurrentTarget , _damage);
     }
 
-    public virtual void DealDamage()
-    {
-        //deal damage to the enemy
-        Health tempHealth = CurrentTarget.GetComponent<Health>();
-        tempHealth.TakeDamage(_damage);
-    }
 
 }

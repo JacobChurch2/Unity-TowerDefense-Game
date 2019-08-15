@@ -8101,6 +8101,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turrets3
       objectReference: {fileID: 0}
+    - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8171,6 +8176,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: FireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 671b662bfb6969a4ba9f2f897a285908, type: 3}
 --- !u!1 &965409375 stripped
@@ -8179,24 +8194,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 965409374}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &965409376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965409375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c379a7188a015894dad31320b02b5191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 10
-  _currentTarget: {fileID: 0}
-  _rotatingSpeed: 4
-  _damage: 10
-  FireCoolDown: 1
-  FireRate: 3
 --- !u!54 &965409377
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11012,6 +11009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turrets2
       objectReference: {fileID: 0}
+    - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11082,6 +11084,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: FireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 671b662bfb6969a4ba9f2f897a285908, type: 3}
 --- !u!1 &1390935233 stripped
@@ -11090,24 +11102,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1390935232}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1390935234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390935233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c379a7188a015894dad31320b02b5191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 10
-  _currentTarget: {fileID: 0}
-  _rotatingSpeed: 6
-  _damage: 10
-  FireCoolDown: 1
-  FireRate: 3
 --- !u!54 &1390935235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12192,6 +12186,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turrets5
       objectReference: {fileID: 0}
+    - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12262,6 +12261,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: FireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 671b662bfb6969a4ba9f2f897a285908, type: 3}
 --- !u!1 &1509949082 stripped
@@ -12270,24 +12279,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1509949081}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1509949083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509949082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c379a7188a015894dad31320b02b5191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 10
-  _currentTarget: {fileID: 0}
-  _rotatingSpeed: 4
-  _damage: 10
-  FireCoolDown: 1
-  FireRate: 3
 --- !u!54 &1509949084
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14825,6 +14816,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turrets6
       objectReference: {fileID: 0}
+    - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14895,6 +14891,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: FireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 671b662bfb6969a4ba9f2f897a285908, type: 3}
 --- !u!1 &1844933335 stripped
@@ -14903,24 +14909,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1844933334}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1844933336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844933335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c379a7188a015894dad31320b02b5191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 10
-  _currentTarget: {fileID: 0}
-  _rotatingSpeed: 2
-  _damage: 10
-  FireCoolDown: 1
-  FireRate: 3
 --- !u!54 &1844933337
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16195,6 +16183,10 @@ MonoBehaviour:
     Prefab: {fileID: 1421128632862960578, guid: 39fc449e53f95f14aa9042668af4bd32,
       type: 3}
     Size: 50
+  - Tag: 1
+    Prefab: {fileID: 2831614466890041711, guid: 8704bd5c1cbdb5844b52ba2ffd2a35b8,
+      type: 3}
+    Size: 20
 --- !u!1001 &2000464012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17322,6 +17314,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turrets4
       objectReference: {fileID: 0}
+    - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17392,6 +17389,16 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: FireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 671b662bfb6969a4ba9f2f897a285908, type: 3}
 --- !u!1 &2141502654 stripped
@@ -17400,24 +17407,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2141502653}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2141502655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141502654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c379a7188a015894dad31320b02b5191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 10
-  _currentTarget: {fileID: 0}
-  _rotatingSpeed: 3
-  _damage: 10
-  FireCoolDown: 1
-  FireRate: 3
 --- !u!54 &2141502656
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -18436,6 +18425,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: _radius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: FireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: _damage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 671b662bfb6969a4ba9f2f897a285908, type: 3}
 --- !u!1 &8296172667780141242 stripped
@@ -18444,24 +18448,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4864374545694593120}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8296172667780141243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8296172667780141242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c379a7188a015894dad31320b02b5191, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _radius: 10
-  _currentTarget: {fileID: 0}
-  _rotatingSpeed: 4
-  _damage: 10
-  FireCoolDown: 1
-  FireRate: 3
 --- !u!54 &8296172667780141244
 Rigidbody:
   m_ObjectHideFlags: 0

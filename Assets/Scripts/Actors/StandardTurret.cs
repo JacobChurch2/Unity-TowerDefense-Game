@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class StandardTurret : Turret
 {
-     
     private protected override float _fireRate { get; set; }
     //private protected override float _fireCoolDown { get; set; }
     public override void Start()
@@ -16,6 +15,5 @@ public class StandardTurret : Turret
     {
         base.Update();
     }
-
 
 }
