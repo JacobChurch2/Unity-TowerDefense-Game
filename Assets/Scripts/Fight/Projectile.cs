@@ -38,13 +38,8 @@ public class Projectile : MonoBehaviour, IPooledObject
         transform.position = Vector3.Lerp(transform.position + transform.forward,
             _target.position,
             MoveSpeed *Time.deltaTime);
-
-        //_rb.velocity = Vector3.one * Time.deltaTime * MoveSpeed;
         transform.LookAt(_target);
-
-        //_rb.MovePosition(_target.position);
     }
-
 
     public void OnObjectSpawn()
     {
@@ -54,7 +49,7 @@ public class Projectile : MonoBehaviour, IPooledObject
 
     public void OnObjectDespawn()
     {
-        // Hit here
+        // 
     }
 
     public void Despawn()

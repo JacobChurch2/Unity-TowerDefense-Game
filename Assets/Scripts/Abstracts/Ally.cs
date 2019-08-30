@@ -15,7 +15,7 @@ public abstract class Ally : Actor
 
     [SerializeField] private float _radius = 10;
     [SerializeField] private Transform _currentTarget;
-    public float _rotatingSpeed = 2f;
+    private float _rotatingSpeed = 4f;
 
     public virtual void Start()
     {

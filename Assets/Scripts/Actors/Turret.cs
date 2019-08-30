@@ -8,45 +8,47 @@ public class Turret : Ally
     private protected override Transform CurrentTarget { get; set; }
     [SerializeField] private protected Transform _firingPoint;
 
-    [SerializeField] private float _damage = 1f;
+    [SerializeField]
+    private float _damage = 1f;
+
     private protected virtual float _fireRate
     {
         get { return FireRate; }
         set { FireRate = value; }
     }
 
+    public float FireRate;
+    public float DefaultFireCoolDown;
+
     [SerializeField]
-    public virtual float _fireCoolDown
+    public virtual float FireCoolDown
     {
-        get { return FireCoolDown; }
-        set { FireCoolDown = value; }
+        get { return _fireCoolDown; }
+        set { _fireCoolDown = value; }
     }
 
-    public float DefaultFireCooldown = 1f;
-
-    private float FireCoolDown;
-    public float FireRate;
+    private float _fireCoolDown;
 
     public override void Start()
     {
         base.Start();
-        _fireCoolDown = 1f;
+        FireCoolDown = DefaultFireCoolDown;
     }
 
     public override void Update()
     {
         base.Update();
-
+            
         if (CurrentTarget != null)
         {
-            if (_fireCoolDown <= 0f)
+            if (FireCoolDown <= 0f)
             {
                 Fire();
-                _fireCoolDown = DefaultFireCooldown/FireRate;
+                FireCoolDown = DefaultFireCoolDown / _fireRate;
             }
             else
             {
-                _fireCoolDown -= Time.deltaTime;
+                FireCoolDown -= Time.deltaTime;
             }
 
         }
@@ -58,10 +60,7 @@ public class Turret : Ally
             PooledObjectType.SpearBullet, _firingPoint.position,
             Quaternion.identity);
 
-        //DealDamage();
-
-        go.GetComponent<Projectile>().SetProjectile(CurrentTarget , _damage);
+        go.GetComponent<Projectile>().SetProjectile(CurrentTarget, _damage);
     }
-
 
 }

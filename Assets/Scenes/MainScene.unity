@@ -8104,7 +8104,7 @@ PrefabInstance:
     - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
@@ -11012,7 +11012,7 @@ PrefabInstance:
     - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
@@ -12189,7 +12189,7 @@ PrefabInstance:
     - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
@@ -14819,7 +14819,7 @@ PrefabInstance:
     - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
@@ -17321,7 +17321,7 @@ PrefabInstance:
     - target: {fileID: 3503897225925427418, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 503011376383783625, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
@@ -18437,12 +18437,17 @@ PrefabInstance:
     - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: FireRate
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
         type: 3}
       propertyPath: _damage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387186924398627573, guid: 671b662bfb6969a4ba9f2f897a285908,
+        type: 3}
+      propertyPath: DefaultFireCoolDown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 671b662bfb6969a4ba9f2f897a285908, type: 3}
