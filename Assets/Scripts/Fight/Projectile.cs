@@ -3,18 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Transactions;
+using TreeEditor;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
 public class Projectile : MonoBehaviour, IPooledObject
 {
     private Transform _target;
+    private Transform _firingPoint;
     public float MoveSpeed = 2f;
     private Rigidbody _rb;
+    private float _allyRadius;
 
     [HideInInspector] public float Damage = 1f;
 
     public PooledObjectType Type;
+    private float distance;
 
     private void Start()
     {
@@ -28,17 +33,29 @@ public class Projectile : MonoBehaviour, IPooledObject
 
     public void Hit()
     {
-        //Deal damage here
         Health tempHealth = _target.GetComponent<Health>();
         tempHealth.TakeDamage(Damage);
     }
 
     public void Move()
     {
-        transform.position = Vector3.Lerp(transform.position + transform.forward,
-            _target.position,
-            MoveSpeed *Time.deltaTime);
-        transform.LookAt(_target);
+        if (_target.gameObject.activeSelf)
+        {
+            distance = (transform.position - _firingPoint.position).sqrMagnitude;
+            transform.LookAt(_target);
+            _rb.velocity = _firingPoint.forward * MoveSpeed * 2 ;
+
+
+            if (distance > _allyRadius *12)
+            {
+                Despawn();
+            }
+        }
+        else
+        {
+            Despawn();
+        }
+
     }
 
     public void OnObjectSpawn()
@@ -50,17 +67,25 @@ public class Projectile : MonoBehaviour, IPooledObject
     public void OnObjectDespawn()
     {
         // 
+        distance = 0;
+        _target = null;
+        _firingPoint = null;
+        _rb.velocity = Vector3.zero;
+        _allyRadius = 0;
     }
 
     public void Despawn()
     {
-        ObjectPooler.Instance.Despawn(Type,this.gameObject);
+        ObjectPooler.Instance.Despawn(Type, this.gameObject);
     }
 
-    public void SetProjectile(Transform tr, float dg)
+    public void SetProjectile(Transform tr, float dg, Transform firingPos, float rad)
     {
         _target = tr;
         Damage = dg;
+        _firingPoint = firingPos;
+        _rb.AddForce(_firingPoint.forward * 100 * MoveSpeed);
+        _allyRadius = rad;
     }
 
     private void OnTriggerEnter(Collider other)

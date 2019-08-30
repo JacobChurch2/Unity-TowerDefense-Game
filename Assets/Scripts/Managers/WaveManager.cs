@@ -66,11 +66,13 @@ public class WaveManager : MonoBehaviour
         else
         {
             //NO MORE WAVES
+            Debug.Log("All the waves has finished .");
         }
     }
 
     private void SpawnWave()
     {
+        Debug.Log("New wave spawned with the index of  " + _waveIndex);
         //wave spawned
         StartCoroutine(DelayedSpawn());
     }

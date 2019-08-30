@@ -15,12 +15,7 @@ public abstract class Ally : Actor
 
     [SerializeField] private float _radius = 10;
     [SerializeField] private Transform _currentTarget;
-    private float _rotatingSpeed = 4f;
-
-    public virtual void Start()
-    {
-        //InvokeRepeating("UpdateTarget",0,.5f);
-    }
+    private float _rotatingSpeed = 8f;
 
     public  virtual void Update()
     {

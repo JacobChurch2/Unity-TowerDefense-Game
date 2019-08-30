@@ -29,9 +29,8 @@ public class Turret : Ally
 
     private float _fireCoolDown;
 
-    public override void Start()
+    public virtual void Start()
     {
-        base.Start();
         FireCoolDown = DefaultFireCoolDown;
     }
 
@@ -60,7 +59,8 @@ public class Turret : Ally
             PooledObjectType.SpearBullet, _firingPoint.position,
             Quaternion.identity);
 
-        go.GetComponent<Projectile>().SetProjectile(CurrentTarget, _damage);
+        go.GetComponent<Projectile>().SetProjectile(CurrentTarget, _damage ,
+            _firingPoint , Radius);
     }
 
 }
