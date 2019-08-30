@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Turret : Ally
 {
@@ -18,6 +15,7 @@ public class Turret : Ally
     }
 
     public float FireRate;
+
     public float DefaultFireCoolDown;
 
     [SerializeField]

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class StandardTurret : Turret
+﻿public class StandardTurret : Turret
 {
     public  override float FireCoolDown { get; set; }
 
@@ -26,9 +22,9 @@ public class StandardTurret : Turret
         base.Fire();
     }
 
-    //public override void UpdateTarget()
-    //{
-    //    base.UpdateTarget();
-    //}
+    public override void UpdateTarget()
+    {
+        base.UpdateTarget();
+    }
 
 }
