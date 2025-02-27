@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using UnityEditor.SearchService;
+using UnityEngine;
 
 public abstract class Enemy : Actor,IPooledObject
 {
     [SerializeField]
     public virtual float speed { get;  set; }
+
+    [SerializeField]
+    public virtual int prizeMoney { get; set; }
 
     private Vector3 _explosionPoint;
 
@@ -56,12 +60,19 @@ public abstract class Enemy : Actor,IPooledObject
 
     public void OnObjectDespawn()
     {
-       GameObject go = ObjectPooler.Instance.SpawnFromPool(
-           PooledObjectType.BlueExplosion,
-           _explosionPoint, 
-           Quaternion.identity);
+        GameObject go = ObjectPooler.Instance.SpawnFromPool(
+            PooledObjectType.BlueExplosion,
+            _explosionPoint,
+            Quaternion.identity);
 
-       
+		if (GetComponent<Health>().GetCurrentHealth() <=0)
+		{
+            Currency TheMoney = GameObject.FindFirstObjectByType<Currency>().GetComponent<Currency>();
 
-    }
+            if (TheMoney != null)
+            {
+                TheMoney.Amount += prizeMoney;
+            }
+		}
+	}
 }

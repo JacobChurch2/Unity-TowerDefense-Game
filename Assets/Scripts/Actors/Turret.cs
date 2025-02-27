@@ -27,6 +27,9 @@ public class Turret : Ally
 
     private float _fireCoolDown;
 
+    [SerializeField]
+    public int Cost;
+
     public virtual void Start()
     {
         FireCoolDown = DefaultFireCoolDown;
