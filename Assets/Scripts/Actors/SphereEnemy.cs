@@ -8,7 +8,13 @@ public class SphereEnemy : Enemy
         set { _speed = value; }
     }
 
-    [SerializeField] private PooledObjectType _type;
+	public override int prizeMoney 
+    { 
+        get {  return _prizeMoney; }
+        set { _prizeMoney = value; } 
+    }
+
+	[SerializeField] private PooledObjectType _type;
     public override PooledObjectType type { get; set; }
     public override bool DoOnce { get; set; }
     public override int WaypointIndex { get; set; }
@@ -16,6 +22,7 @@ public class SphereEnemy : Enemy
     public override PathManager manager { get; set; }
 
     public float _speed = 10f;
+    public int _prizeMoney = 1;
 
     private void Awake()
     {
