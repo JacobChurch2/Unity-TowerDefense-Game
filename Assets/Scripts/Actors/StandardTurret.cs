@@ -1,6 +1,6 @@
 ﻿public class StandardTurret : Turret
 {
-    public  override float FireCoolDown { get; set; }
+    public override float FireCoolDown { get; set; }
 
     public override void Start()
     {
@@ -26,5 +26,4 @@
     {
         base.UpdateTarget();
     }
-
 }

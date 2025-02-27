@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 
-public class Turret : Ally
-{
+public class Turret : Ally {
     private protected override Transform CurrentTarget { get; set; }
     [SerializeField] private protected Transform _firingPoint;
 
     [SerializeField]
     private float _damage = 1f;
+
+    [SerializeField]
+    public int cost = 10;
+
+    [SerializeField]
+    public int sell = 5;
 
     private protected virtual float _fireRate
     {
@@ -60,5 +65,4 @@ public class Turret : Ally
         go.GetComponent<Projectile>().SetProjectile(CurrentTarget, _damage ,
             _firingPoint , Radius);
     }
-
 }

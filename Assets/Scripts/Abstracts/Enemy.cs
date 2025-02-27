@@ -11,7 +11,6 @@ public abstract class Enemy : Actor,IPooledObject
     public abstract int WaypointIndex { get;  set; }
     public abstract bool DoOnce { get; set; }
     public abstract PathManager manager { get; set; }
-
     public abstract PooledObjectType type { get; set; }
      
     public virtual void Start()
