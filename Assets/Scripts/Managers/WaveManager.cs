@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -19,6 +20,9 @@ public class WaveManager : MonoBehaviour
     private float _countDownTimer;
     private bool _isWaveSpawned;
 
+    [NonSerialized]
+    public bool LastWave;
+
     private WaitForSeconds _enemySpawnDelay;
 
     private void Awake()
@@ -37,6 +41,7 @@ public class WaveManager : MonoBehaviour
     {
         if (_waveIndex != Wave.Waves.Count)
         {
+            LastWave = false;
             if (_countDownTimer <= 0 && !_isWaveSpawned)
             {
                 SpawnWave();
@@ -66,6 +71,7 @@ public class WaveManager : MonoBehaviour
         {
             //NO MORE WAVES
             Debug.Log("All the waves has finished .");
+            LastWave = true;
         }
     }
 

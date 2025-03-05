@@ -14,6 +14,12 @@ public class SphereEnemy : Enemy
         set { _prizeMoney = value; } 
     }
 
+	public override int damage 
+	{
+		get { return _damage; }
+		set { _damage = value; }
+	}
+
 	[SerializeField] private PooledObjectType _type;
     public override PooledObjectType type { get; set; }
     public override bool DoOnce { get; set; }
@@ -23,6 +29,7 @@ public class SphereEnemy : Enemy
 
     public float _speed = 10f;
     public int _prizeMoney = 1;
+    public int _damage = 1;
 
     private void Awake()
     {
