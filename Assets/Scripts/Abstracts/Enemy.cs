@@ -9,6 +9,9 @@ public abstract class Enemy : Actor,IPooledObject
     [SerializeField]
     public virtual int prizeMoney { get; set; }
 
+    [SerializeField]
+    public virtual int damage { get; set; }
+
     private Vector3 _explosionPoint;
 
     public abstract Transform target { get;  set; }
@@ -73,6 +76,6 @@ public abstract class Enemy : Actor,IPooledObject
             {
                 TheMoney.Amount += prizeMoney;
             }
-		}
+		} 
 	}
 }
