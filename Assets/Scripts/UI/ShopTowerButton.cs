@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragButton : MonoBehaviour, IDragHandler, IEndDragHandler {
+public class ShopTowerButton : MonoBehaviour, IDragHandler, IEndDragHandler {
 	[SerializeField] protected bool canDrag;
 
 	[SerializeField] protected Canvas canvas;
@@ -11,10 +11,18 @@ public class DragButton : MonoBehaviour, IDragHandler, IEndDragHandler {
 	protected RectTransform itemRectTransform;
 	protected Vector3 originalPosition;
 
+	Vector3 towerSpawnPos;
+	Vector3 mousePos;
+
 	[SerializeField] GameObject TowerObj;
+	[SerializeField] ShopUI shop;
 
 	private void Start() {
 		canDrag = true;
+	}
+
+	private void Update() {
+		mousePos = Input.mousePosition;
 	}
 
 	private void Awake() {
@@ -45,14 +53,19 @@ public class DragButton : MonoBehaviour, IDragHandler, IEndDragHandler {
 	}
 
 	protected bool Condition(PointerEventData eventData) {
+		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit)) {
+			if (hit.collider.gameObject.GetComponent<Turret>() != null) {
+
+				return true;
+			}
+		}
+
 		return false;
 	}
 
 	protected void Drop(PointerEventData eventData) {
-	
+		shop.buyTower(TowerObj.GetComponent<Turret>(), towerSpawnPos);
 	}
 
-	public void Press() {
-		Instantiate(TowerObj, Input.mousePosition, new Quaternion());
-	}
+	public void Press() {}
 }

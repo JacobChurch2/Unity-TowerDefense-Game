@@ -21,4 +21,10 @@ public class ShopUI : MonoBehaviour {
     public void TowerBtnClick(GameObject tower) {
         
     }
+
+    public void buyTower(Turret turret, Vector3 spawnPos) {
+        if (turret.Cost <= money) {
+            Instantiate(turret.gameObject, spawnPos, Quaternion.identity);
+        }
+    }
 }
