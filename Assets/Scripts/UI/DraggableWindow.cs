@@ -5,30 +5,28 @@ public class DraggableWindow : MonoBehaviour, IDragHandler
 {
     [SerializeField] private Canvas canvas;
 
-    [SerializeField] private float minY = 100f; // Set your min Y limit
-    [SerializeField] private float maxY = 100f;  // Set your max Y limit
-    
+    [SerializeField] private float minX = 100f; // Set your min X limit
+    [SerializeField] private float maxX = 100f;  // Set your max X limit
+
     private RectTransform rectTransform;
-    private float startY;
-    private float minYDeviation, maxYDeviation;
+    private float startX;
+    private float minXDeviation, maxXDeviation;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        startY = rectTransform.anchoredPosition.y;
+        startX = rectTransform.anchoredPosition.x;
 
         // Set dynamic limits
-        minYDeviation = startY - minY;
-        maxYDeviation = startY + maxY;
+        minXDeviation = startX - minX;
+        maxXDeviation = startX + maxX;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         Vector2 newPosition = rectTransform.anchoredPosition;
-        newPosition.y += eventData.delta.y / canvas.scaleFactor; // Only update Y position
-        newPosition.y = Mathf.Clamp(newPosition.y, minYDeviation, maxYDeviation);  // Clamp within limits
+        newPosition.x += eventData.delta.x / canvas.scaleFactor; // Only update X position
+        newPosition.x = Mathf.Clamp(newPosition.x, minXDeviation, maxXDeviation);  // Clamp within limits
 
         rectTransform.anchoredPosition = newPosition;
     }
