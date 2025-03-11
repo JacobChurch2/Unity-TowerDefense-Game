@@ -26,7 +26,10 @@ public class Projectile : MonoBehaviour, IPooledObject
     public void Hit()
     {
         Health tempHealth = _target.GetComponent<Health>();
-        tempHealth.TakeDamage(Damage);
+        if (tempHealth != null)
+        {
+            tempHealth.TakeDamage(Damage);
+        }
     }
 
     public void Move()
