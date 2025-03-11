@@ -14,23 +14,18 @@ public class MainMenu : MonoBehaviour, IPopUp
     }
     private void OnEnable()
     {
-        ShowPopup(eventSystem, startButton);
+        this.ShowPopup(eventSystem, startButton);
     }
     public void Begin() 
     {
         SceneManager.LoadScene("MainScene");
     }
-    public void ShowPopup(EventSystem eventSystem, GameObject newFirstSelected)
-    {
-        if (eventSystem != null && newFirstSelected != null)
-        {
-            eventSystem.SetSelectedGameObject(newFirstSelected);
-        }
-    }
     public void Quit()
     {
         Application.Quit();
-        UnityEditor.EditorApplication.ExitPlaymode();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode(); // Only runs in the Unity Editor
+#endif
     }
     public void OpenOptions() 
     {
