@@ -6,7 +6,6 @@ public class StatManager : ScriptableObject
 {
     // Event to notify when a stat is updated
     public event System.Action OnStatChanged;
-
     private Dictionary<string, float> stats = new Dictionary<string, float>
     {
         { "TowerTotal", 0 },
@@ -40,10 +39,15 @@ public class StatManager : ScriptableObject
     {
         return stats.ContainsKey(statName) ? stats[statName] : 0;
     }
+    private List<string> KeyCopy() 
+    {
+        return new List<string>(stats.Keys); // Create a copy of keys
+    }
 
     public void ResetStats()
     {
-        foreach (var key in stats.Keys)
+        List<string> keys = KeyCopy();
+        foreach (var key in keys)
         {
             stats[key] = 0;
             PlayerPrefs.SetFloat(key, 0);
@@ -59,7 +63,8 @@ public class StatManager : ScriptableObject
 
     private void LoadStats()
     {
-        foreach (var key in new List<string>(stats.Keys)) // Create a copy of the keys
+        List<string> keys = KeyCopy(); 
+        foreach (var key in keys) 
         {
             stats[key] = PlayerPrefs.GetFloat(key, 0);
         }
