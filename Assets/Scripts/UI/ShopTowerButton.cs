@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,18 +12,13 @@ public class ShopTowerButton : MonoBehaviour, IDragHandler, IEndDragHandler {
 	protected RectTransform itemRectTransform;
 	protected Vector3 originalPosition;
 
-	Vector3 towerSpawnPos;
-	Vector3 mousePos;
+	NodeSpot nodeToSpawn;
 
 	[SerializeField] GameObject TowerObj;
 	[SerializeField] ShopUI shop;
 
 	private void Start() {
 		canDrag = true;
-	}
-
-	private void Update() {
-		mousePos = Input.mousePosition;
 	}
 
 	private void Awake() {
@@ -54,8 +50,8 @@ public class ShopTowerButton : MonoBehaviour, IDragHandler, IEndDragHandler {
 
 	protected bool Condition(PointerEventData eventData) {
 		if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hit)) {
-			if (hit.collider.gameObject.GetComponent<Turret>() != null) {
-
+			if (hit.collider.gameObject.GetComponent<NodeSpot>() != null) {
+				nodeToSpawn = hit.collider.gameObject.GetComponent<NodeSpot>();
 				return true;
 			}
 		}
@@ -64,7 +60,7 @@ public class ShopTowerButton : MonoBehaviour, IDragHandler, IEndDragHandler {
 	}
 
 	protected void Drop(PointerEventData eventData) {
-		shop.buyTower(TowerObj.GetComponent<Turret>(), towerSpawnPos);
+		shop.buyTower(TowerObj.GetComponent<Turret>(), nodeToSpawn);
 	}
 
 	public void Press() {}

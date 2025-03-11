@@ -1,8 +1,10 @@
 using UnityEngine;
 
 public class NodeSpot : MonoBehaviour {
-    [SerializeField] Turret curTurret;
-    [SerializeField] BoxCollider col;
+    BoxCollider col;
+
+    public Turret curTurret;
+    public bool hasTurret = false;
 
     void Start() {
         col = GetComponent<BoxCollider>();
@@ -12,20 +14,17 @@ public class NodeSpot : MonoBehaviour {
         foreach (Collider c in objects) {
             if (c.gameObject.GetComponent<Turret>() != null) {
                 curTurret = c.gameObject.GetComponent<Turret>();
+                hasTurret = true;
                 break;
 			}
         }
     }
 
-    void Update() {
-        
-    }
+	void OnMouseDown() {
+        ShopUI shop = GameObject.Find("ShopperUI").GetComponent<ShopUI>();
 
-    public void newTurret(bool place) {
-        if (place) {
-            
-        } else {
-            Destroy(curTurret.gameObject);       
+		if (shop.sell && hasTurret) {
+            shop.sellTower(this);
         }
-    }
+	}
 }

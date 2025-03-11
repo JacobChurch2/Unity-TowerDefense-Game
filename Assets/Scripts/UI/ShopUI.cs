@@ -5,12 +5,10 @@ public class ShopUI : MonoBehaviour {
     [SerializeField] TextMeshProUGUI moneyTxt;
     [SerializeField] int money;
 
-    void Start() {
-        moneyTxt.text = "$" + money;
-    }
+    public bool sell = false;
 
-    void Update() {
-        
+    void Start() {
+        updateMoney();
     }
 
     public void ToggleClick(GameObject toggleObj) {
@@ -18,13 +16,35 @@ public class ShopUI : MonoBehaviour {
         GetComponent<RectTransform>().position = (toggleObj.activeSelf) ? new Vector3(200, 0, 0) : new Vector3(0, 0, 0);
     }
 
-    public void TowerBtnClick(GameObject tower) {
-        
+    public void buyTower(Turret turret, NodeSpot spawnNode) {
+        sell = false;
+        if (turret.Cost <= money && !spawnNode.hasTurret) {
+            Instantiate(turret.gameObject, spawnNode.gameObject.transform.position, Quaternion.identity);
+            spawnNode.curTurret = turret;
+            updateMoney(-turret.Cost);
+            spawnNode.hasTurret = true;
+        }
     }
 
-    public void buyTower(Turret turret, Vector3 spawnPos) {
-        if (turret.Cost <= money) {
-            Instantiate(turret.gameObject, spawnPos, Quaternion.identity);
+    public void sellClick() {
+        sell = !sell;
+    }
+
+    public void sellTower(NodeSpot spawnNode) {
+        if (sell) {
+            updateMoney(spawnNode.curTurret.Cost / 2);
+            Destroy(spawnNode.curTurret.gameObject);
+            spawnNode.hasTurret = false;
+            sell = false;
         }
+    }
+
+    public void updateMoney() {
+		moneyTxt.text = "$" + money;
+	}
+
+    public void updateMoney(int change) {
+        money += change;
+        updateMoney();
     }
 }
