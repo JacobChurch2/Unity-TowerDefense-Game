@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
-using UnityEngine.UI; // If using TextMeshPro
+using UnityEngine.UI;
 
 public class OptionsMenu : MonoBehaviour, IPopUp
 {
@@ -16,15 +16,7 @@ public class OptionsMenu : MonoBehaviour, IPopUp
 
     private void OnEnable()
     {
-        ShowPopup(eventSystem, backButton);
-    }
-
-    public void ShowPopup(EventSystem eventSystem, GameObject newFirstSelected)
-    {
-        if (eventSystem != null && newFirstSelected != null)
-        {
-            eventSystem.SetSelectedGameObject(newFirstSelected);
-        }
+        this.ShowPopup(eventSystem, backButton);  
     }
 
     public void BackToMenu() 
