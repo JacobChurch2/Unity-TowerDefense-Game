@@ -4,15 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour, IPopUp
 {
-    [SerializeField] private GameObject optionsMenu; 
-    [SerializeField] private StatManager statManager;
+    [SerializeField] private GameObject optionsMenu;
     [SerializeField] private EventSystem eventSystem;
     [SerializeField] private GameObject startButton;
 
     private void Start()
     {
-       statManager.ResetStats();
-       optionsMenu.SetActive(false);
+        optionsMenu.SetActive(false);
     }
     private void OnEnable()
     {
