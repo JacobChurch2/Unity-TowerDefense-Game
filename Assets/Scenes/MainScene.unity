@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c74bce2b01c7b468f83d4ff9e2ca8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 10
+  Amount: 1
 --- !u!4 &94007330
 Transform:
   m_ObjectHideFlags: 0
@@ -3866,19 +3866,9 @@ PrefabInstance:
     - target: {fileID: 2263478529432526170, guid: 07eacb954a20c84428b88cfe83e5abf4,
         type: 3}
       propertyPath: m_text
-      value: 'Tank - $50
+      value: 'Tank - $5
 
 '
-      objectReference: {fileID: 0}
-    - target: {fileID: 2263772604226550893, guid: 07eacb954a20c84428b88cfe83e5abf4,
-        type: 3}
-      propertyPath: m_text
-      value: Turret - $10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2813858174624403247, guid: 07eacb954a20c84428b88cfe83e5abf4,
-        type: 3}
-      propertyPath: m_text
-      value: Sniper - $30
       objectReference: {fileID: 0}
     - target: {fileID: 4596162778996066553, guid: 07eacb954a20c84428b88cfe83e5abf4,
         type: 3}
@@ -3912,11 +3902,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c6e44aca2b09c5b499b5f70b3ef6767f,
         type: 3}
-    - target: {fileID: 7109687279968060157, guid: 07eacb954a20c84428b88cfe83e5abf4,
-        type: 3}
-      propertyPath: m_text
-      value: Bomb - $50
-      objectReference: {fileID: 0}
     - target: {fileID: 7654074981052943092, guid: 07eacb954a20c84428b88cfe83e5abf4,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -16119,201 +16104,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wave:
     Waves:
-    - EnemyData:
-      - EnemyType: 0
-        Amount: 3
+    - EnemyType: 3
+      Amount: 3
       StartingPoint: {fileID: 1755949983}
       EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 0
-        Amount: 5
-      - EnemyType: 3
-        Amount: 3
+    - EnemyType: 0
+      Amount: 5
       StartingPoint: {fileID: 1755949983}
       EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 0
-        Amount: 10
-      - EnemyType: 0
-        Amount: 10
+    - EnemyType: 0
+      Amount: 10
       StartingPoint: {fileID: 1755949983}
       EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 3
-        Amount: 5
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
+    - EnemyType: 0
+      Amount: 15
       StartingPoint: {fileID: 1755949983}
       EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
+    - EnemyType: 0
+      Amount: 20
       StartingPoint: {fileID: 1755949983}
       EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      - EnemyType: 6
-        Amount: 1
-      - EnemyType: 7
-        Amount: 1
-      StartingPoint: {fileID: 1755949983}
-      EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 0
-        Amount: 10
-      - EnemyType: 3
-        Amount: 10
-      - EnemyType: 6
-        Amount: 10
-      - EnemyType: 7
-        Amount: 10
-      StartingPoint: {fileID: 1755949983}
-      EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 0
-        Amount: 10
-      - EnemyType: 3
-        Amount: 10
-      - EnemyType: 6
-        Amount: 10
-      - EnemyType: 7
-        Amount: 10
-      - EnemyType: 5
-        Amount: 10
-      StartingPoint: {fileID: 1755949983}
-      EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 5
-        Amount: 20
-      - EnemyType: 4
-        Amount: 10
-      StartingPoint: {fileID: 1755949983}
-      EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 5
-        Amount: 5
-      - EnemyType: 4
-        Amount: 2
-      - EnemyType: 5
-        Amount: 5
-      - EnemyType: 4
-        Amount: 2
-      - EnemyType: 5
-        Amount: 5
-      - EnemyType: 4
-        Amount: 2
-      - EnemyType: 5
-        Amount: 5
-      - EnemyType: 4
-        Amount: 2
-      StartingPoint: {fileID: 1755949983}
-      EndingPoint: {fileID: 250741207}
-    - EnemyData:
-      - EnemyType: 5
-        Amount: 10
-      - EnemyType: 4
-        Amount: 4
-      - EnemyType: 6
-        Amount: 5
-      - EnemyType: 5
-        Amount: 10
-      - EnemyType: 4
-        Amount: 4
-      - EnemyType: 6
-        Amount: 5
-      - EnemyType: 5
-        Amount: 10
-      - EnemyType: 4
-        Amount: 4
-      - EnemyType: 6
-        Amount: 5
-      - EnemyType: 5
-        Amount: 10
-      - EnemyType: 4
-        Amount: 4
-      - EnemyType: 6
-        Amount: 5
-      StartingPoint: {fileID: 1755949983}
-      EndingPoint: {fileID: 250741207}
-  CountDownTimer: 15
-  InitialCountDown: 5
-  WaveDelay: 15
-  _spawnDelay: 1
+  CountDownTimer: 10
+  InitialCountDown: 3
+  WaveDelay: 10
+  _spawnDelay: 0.5
 --- !u!1 &1712751747
 GameObject:
   m_ObjectHideFlags: 0
@@ -18878,26 +18692,6 @@ MonoBehaviour:
     Prefab: {fileID: 1385188646734821878, guid: 2a73098a0190b834f9a45c62f90e5adc,
       type: 3}
     Size: 20
-  - Tag: 3
-    Prefab: {fileID: 1421128632862960578, guid: 90eda3c8181f2974699c8ed17441159e,
-      type: 3}
-    Size: 50
-  - Tag: 4
-    Prefab: {fileID: 1421128632862960578, guid: affe49667842187499000c672a82a5fd,
-      type: 3}
-    Size: 50
-  - Tag: 5
-    Prefab: {fileID: 1421128632862960578, guid: 9c0cec7a8bce60448921d04b4a63e264,
-      type: 3}
-    Size: 50
-  - Tag: 6
-    Prefab: {fileID: 1421128632862960578, guid: c57fc87fa608bd8498dcc23a97163669,
-      type: 3}
-    Size: 50
-  - Tag: 7
-    Prefab: {fileID: 1421128632862960578, guid: e881a29e375631540b4ccc2b830b8e49,
-      type: 3}
-    Size: 50
 --- !u!1001 &2000464012
 PrefabInstance:
   m_ObjectHideFlags: 0
