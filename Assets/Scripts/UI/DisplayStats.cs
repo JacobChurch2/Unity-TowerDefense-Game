@@ -16,22 +16,14 @@ public class DisplayStats
     }
     public void UpdateStatTexts()
     {
-        if (statTexts == null) return;
-
-        for (int i = statTexts.Count - 1; i >= 0; i--)
+        foreach (TMP_Text stat in statTexts)
         {
-            if (statTexts[i] == null)
-            {
-                statTexts.RemoveAt(i);
-                continue;
-            }
-
-            string statName = statTexts[i].gameObject.name.Split('_')[0];
+            string statName = stat.gameObject.name.Split('_')[0];
 
             if (statManager != null)
             {
                 float statValue = statManager.GetStat(statName);
-                statTexts[i].text = $"{statValue}";
+                stat.text = $"{statValue}";
             }
         }
     }
