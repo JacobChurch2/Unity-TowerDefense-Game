@@ -16104,7 +16104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wave:
     Waves:
-    - EnemyType: 0
+    - EnemyType: 3
       Amount: 3
       StartingPoint: {fileID: 1755949983}
       EndingPoint: {fileID: 250741207}

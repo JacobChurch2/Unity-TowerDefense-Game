@@ -25,6 +25,16 @@ public class WaveManager : MonoBehaviour
 
     private WaitForSeconds _enemySpawnDelay;
 
+    public void IncreaseDifficulty()
+    {
+        //Lower the time between waves
+
+        CountDownTimer = Mathf.Max(CountDownTimer * 0.9f, 2f);
+        //InitialCountDown = Mathf.Max(InitialCountDown * 0.9f, 1f);
+        WaveDelay = Mathf.Max(WaveDelay * 0.85f, 0.5f);
+        _spawnDelay = Mathf.Max(_spawnDelay * 0.9f, 0.25f);
+    }
+
     private void Awake()
     {
         ResetEnemySpawnDelay();
@@ -79,6 +89,7 @@ public class WaveManager : MonoBehaviour
     {
         Debug.Log("New wave spawned with the index of  " + _waveIndex);
         //wave spawned
+        IncreaseDifficulty();
         StartCoroutine(DelayedSpawn());
     }
 
@@ -86,20 +97,26 @@ public class WaveManager : MonoBehaviour
     {
         float stopwatch = 0f;
         ObjectPooler pooler = ObjectPooler.Instance;
+        Wave currentWave = Wave.Waves[_waveIndex];
 
-
-        for (int j = 0; j < Wave.Waves[_waveIndex].Amount; j++)
+        for (int i = 0; i < currentWave.EnemyData.Count; i++)
         {
-            pooler.SpawnFromPool(Wave.Waves[_waveIndex].EnemyType,
-                Wave.Waves[_waveIndex].StartingPoint.position,
-                Wave.Waves[_waveIndex].StartingPoint.rotation);
+            // Access the enemy data (type and amount)
+            var enemySpawnData = currentWave.EnemyData[i];
 
-            stopwatch += Time.deltaTime * 15;
-            yield return _enemySpawnDelay;
+            // Spawn the specified amount of the current enemy type
+            for (int j = 0; j < enemySpawnData.Amount; j++)
+            {
+                pooler.SpawnFromPool(enemySpawnData.EnemyType,
+                    currentWave.StartingPoint.position,
+                    currentWave.StartingPoint.rotation);
+
+                stopwatch += Time.deltaTime * 15;  // Adjust this value for spawn pacing
+                yield return _enemySpawnDelay;    // Wait before spawning the next enemy
+            }
         }
 
-        _waveIndex++;
-        WaveDelay += stopwatch * _waveIndex;
+        //WaveDelay += stopwatch * _waveIndex;
 
     }
 

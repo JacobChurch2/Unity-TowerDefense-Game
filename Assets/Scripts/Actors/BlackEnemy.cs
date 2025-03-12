@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RedSphereEnemy : Enemy
+public class BlackEnemy : Enemy
 {
     public override float speed
     {
