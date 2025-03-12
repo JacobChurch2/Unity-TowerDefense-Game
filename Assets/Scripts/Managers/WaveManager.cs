@@ -24,12 +24,6 @@ public class WaveManager : MonoBehaviour
     public bool LastWave;
 
     private WaitForSeconds _enemySpawnDelay;
-    
-    [SerializeField] 
-    private StatManager statManager;
-    
-   
-
 
     private void Awake()
     {
@@ -41,7 +35,6 @@ public class WaveManager : MonoBehaviour
     private void Update()
     {
         WaveSystem();
-        
     }
 
     private void WaveSystem()
@@ -52,8 +45,6 @@ public class WaveManager : MonoBehaviour
             if (_countDownTimer <= 0 && !_isWaveSpawned)
             {
                 SpawnWave();
-                // Add To Stats
-                statManager.AddToStat("WavesDefeatedTotal", 1);
                 _isWaveSpawned = true;
             }
             else
