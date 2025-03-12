@@ -16310,6 +16310,33 @@ MonoBehaviour:
         Amount: 5
       StartingPoint: {fileID: 1755949983}
       EndingPoint: {fileID: 250741207}
+    - EnemyData:
+      - EnemyType: 5
+        Amount: 10
+      - EnemyType: 4
+        Amount: 4
+      - EnemyType: 6
+        Amount: 5
+      - EnemyType: 5
+        Amount: 10
+      - EnemyType: 4
+        Amount: 4
+      - EnemyType: 6
+        Amount: 5
+      - EnemyType: 5
+        Amount: 10
+      - EnemyType: 4
+        Amount: 4
+      - EnemyType: 6
+        Amount: 5
+      - EnemyType: 5
+        Amount: 10
+      - EnemyType: 4
+        Amount: 4
+      - EnemyType: 6
+        Amount: 5
+      StartingPoint: {fileID: 1755949983}
+      EndingPoint: {fileID: 250741207}
   CountDownTimer: 15
   InitialCountDown: 5
   WaveDelay: 15
