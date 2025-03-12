@@ -85,7 +85,7 @@ public class Projectile : MonoBehaviour, IPooledObject
 
     private void Explode()
     {
-        float explosionRadius = 5f; // Adjust explosion radius as needed
+        float explosionRadius = 10f; // Adjust explosion radius as needed
         float explosionForce = 500f; // Adjust force if physics is applied
 
         Collider[] hitEnemies = Physics.OverlapSphere(transform.position, explosionRadius);
