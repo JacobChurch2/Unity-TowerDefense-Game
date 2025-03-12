@@ -3937,6 +3937,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40
       objectReference: {fileID: 0}
+    - target: {fileID: 7720370548714135487, guid: 07eacb954a20c84428b88cfe83e5abf4,
+        type: 3}
+      propertyPath: canDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720370548714135487, guid: 07eacb954a20c84428b88cfe83e5abf4,
+        type: 3}
+      propertyPath: TowerObj
+      value: 
+      objectReference: {fileID: 3503897225925427418, guid: 2b5cc0a366f051342b14a526ac354c12,
+        type: 3}
     - target: {fileID: 7755932928633919794, guid: 07eacb954a20c84428b88cfe83e5abf4,
         type: 3}
       propertyPath: m_Type
@@ -18923,6 +18934,10 @@ MonoBehaviour:
     Size: 50
   - Tag: 7
     Prefab: {fileID: 1421128632862960578, guid: e881a29e375631540b4ccc2b830b8e49,
+      type: 3}
+    Size: 50
+  - Tag: 8
+    Prefab: {fileID: 2831614466890041711, guid: 60bd90735783d9148a06aa7da0d98512,
       type: 3}
     Size: 50
 --- !u!1001 &2000464012

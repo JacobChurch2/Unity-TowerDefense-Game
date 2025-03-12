@@ -38,29 +38,40 @@ public class Turret : Ally
     public override void Update()
     {
         base.Update();
-            
+
         if (CurrentTarget != null)
         {
-            if (FireCoolDown <= 0f)
-            {
-                Fire();
-                FireCoolDown = DefaultFireCoolDown / _fireRate;
-            }
-            else
-            {
-                FireCoolDown -= Time.deltaTime;
-            }
+            // Check if there are enemies within range before firing
+            Collider[] enemiesInRange = Physics.OverlapSphere(transform.position, Radius);
 
+            if (enemiesInRange.Length > 0) // Only fire if an enemy is in range
+            {
+                if (FireCoolDown <= 0f)
+                {
+                    Fire();
+                    FireCoolDown = DefaultFireCoolDown / _fireRate;  // Reset cooldown after firing
+                }
+                else
+                {
+                    FireCoolDown -= Time.deltaTime; // Reduce cooldown over time
+                }
+            }
         }
     }
 
     public virtual void Fire()
     {
-        GameObject go = ObjectPooler.Instance.SpawnFromPool(
-            PooledObjectType.SpearBullet, _firingPoint.position,
-            Quaternion.identity);
+        // Check if an enemy is within range
+        Collider[] enemiesInRange = Physics.OverlapSphere(transform.position, Radius);
 
-        go.GetComponent<Projectile>().SetProjectile(CurrentTarget, _damage ,
-            _firingPoint , Radius);
+        if (enemiesInRange.Length > 0) // Only fire if an enemy is in range
+        {
+            PooledObjectType projectileType = (this is BombTurret) ? PooledObjectType.BombBullet : PooledObjectType.SpearBullet;
+
+            GameObject go = ObjectPooler.Instance.SpawnFromPool(
+                projectileType, _firingPoint.position, Quaternion.identity);
+
+            go.GetComponent<Projectile>().SetProjectile(CurrentTarget, _damage, _firingPoint, Radius);
+        }
     }
 }
