@@ -8,7 +8,7 @@ public class ShopUI : MonoBehaviour {
     [SerializeField] Button toggleBtn;
 
     public bool sell = false;
-
+    [SerializeField] private StatManager statManager;
     void Start() {
         updateMoney();
     }
@@ -28,6 +28,8 @@ public class ShopUI : MonoBehaviour {
             GameObject copy = Instantiate(turret.gameObject, spawnNode.gameObject.transform.position, Quaternion.identity);
             spawnNode.curTurret = copy.GetComponent<Turret>();
             updateMoney(-turret.Cost);
+            // Add To Stats
+            statManager.AddToStat("MoneySpentTotal", turret.Cost);
             spawnNode.hasTurret = true;
         }
     }

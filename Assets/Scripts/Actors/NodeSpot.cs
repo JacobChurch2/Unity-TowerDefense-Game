@@ -22,9 +22,8 @@ public class NodeSpot : MonoBehaviour {
 
 	void OnMouseDown() {
         ShopUI shop = GameObject.Find("ShopperUI").GetComponent<ShopUI>();
-
-		if (shop.sell && hasTurret) {
-            curTurret.Die();
+		
+        if (shop.sell && hasTurret) {
             shop.sellTower(this);
         }
 	}
