@@ -6,6 +6,11 @@ public class ShopUI : MonoBehaviour {
     [SerializeField] TextMeshProUGUI moneyTxt;
     [SerializeField] Currency money;
     [SerializeField] Button toggleBtn;
+    [SerializeField] TextMeshProUGUI MoneySpentText;
+    [SerializeField] TextMeshProUGUI TowersPlacedText;
+
+    private int TowersPlaced;
+    private int MoneySpent;
 
     public bool sell = false;
 
@@ -29,6 +34,18 @@ public class ShopUI : MonoBehaviour {
             spawnNode.curTurret = copy.GetComponent<Turret>();
             updateMoney(-turret.Cost);
             spawnNode.hasTurret = true;
+
+            if (TowersPlacedText)
+            {
+                TowersPlaced++;
+                TowersPlacedText.text  = TowersPlaced.ToString();
+            }
+
+            if (MoneySpentText)
+            {
+                MoneySpent += turret.Cost;
+                MoneySpentText.text = MoneySpent.ToString();
+            }
         }
     }
 

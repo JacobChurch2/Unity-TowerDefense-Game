@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public enum GameState
@@ -19,6 +21,15 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField]
 	End end;
+
+	[SerializeField]
+	TextMeshProUGUI EnemiesDeafeatedText;
+
+	[SerializeField]
+	GameObject winUI, loseUI, shopUI;
+
+	[NonSerialized]
+	public int EnemiesDefeated = 0;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
@@ -36,15 +47,21 @@ public class GameManager : MonoBehaviour
 			case GameState.Active:
 				goToLastWave();
 				goToLoseState();
+				updateEnemiesDeafeated();
 				break;
 			case GameState.LastWave:
 				goToLoseState();
 				goToWinFromLastWave();
+				updateEnemiesDeafeated();
 				break;
 			case GameState.Win:
+				shopUI.SetActive(false);
+				winUI.SetActive(true);
 				print("Win");
 				break;
 			case GameState.Lose:
+				shopUI.SetActive(false);
+				loseUI.SetActive(true);
 				print("lose");
 				break;
 			default:
@@ -73,6 +90,14 @@ public class GameManager : MonoBehaviour
 		if (end != null && end.health <= 0)
 		{
 			state = GameState.Lose;
+		}
+	}
+
+	private void updateEnemiesDeafeated()
+	{
+		if (EnemiesDeafeatedText)
+		{
+			EnemiesDeafeatedText.text = EnemiesDefeated.ToString();
 		}
 	}
 }

@@ -71,10 +71,16 @@ public abstract class Enemy : Actor,IPooledObject
 		if (GetComponent<Health>().GetCurrentHealth() <=0)
 		{
             Currency TheMoney = GameObject.FindFirstObjectByType<Currency>().GetComponent<Currency>();
+            GameManager gm = GameObject.FindFirstObjectByType<GameManager>().GetComponent<GameManager>();
 
-            if (TheMoney != null)
+			if (TheMoney != null)
             {
                 TheMoney.Amount += prizeMoney;
+            }
+
+            if (gm != null)
+            {
+                gm.EnemiesDefeated += 1;
             }
 		} 
 	}
