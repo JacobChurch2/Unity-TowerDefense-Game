@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour, IPooledObject
         {
             distance = (transform.position - _firingPoint.position).sqrMagnitude;
             transform.LookAt(_target);
-            _rb.velocity = _firingPoint.forward * MoveSpeed * 2 ;
+            _rb.linearVelocity = _firingPoint.forward * MoveSpeed * 2 ;
 
 
             if (distance > _allyRadius *12)
@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour, IPooledObject
         distance = 0;
         _target = null;
         _firingPoint = null;
-        _rb.velocity = Vector3.zero;
+        _rb.linearVelocity = Vector3.zero;
         _allyRadius = 0;
     }
 
