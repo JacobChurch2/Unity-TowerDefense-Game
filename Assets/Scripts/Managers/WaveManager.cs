@@ -24,6 +24,13 @@ public class WaveManager : MonoBehaviour
     public bool LastWave;
 
     private WaitForSeconds _enemySpawnDelay;
+    
+    [SerializeField] 
+    private StatManager statManager;
+    
+    [SerializeField]
+    private GameObject winScreen;
+
 
     private void Awake()
     {
@@ -35,6 +42,7 @@ public class WaveManager : MonoBehaviour
     private void Update()
     {
         WaveSystem();
+        
     }
 
     private void WaveSystem()
@@ -45,6 +53,8 @@ public class WaveManager : MonoBehaviour
             if (_countDownTimer <= 0 && !_isWaveSpawned)
             {
                 SpawnWave();
+                // Add To Stats
+                statManager.AddToStat("WavesDefeatedTotal", 1);
                 _isWaveSpawned = true;
             }
             else
@@ -71,6 +81,7 @@ public class WaveManager : MonoBehaviour
         {
             //NO MORE WAVES
             Debug.Log("All the waves has finished .");
+            winScreen?.SetActive(true);
             LastWave = true;
         }
     }

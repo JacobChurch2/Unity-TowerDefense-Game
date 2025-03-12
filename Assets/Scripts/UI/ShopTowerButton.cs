@@ -17,11 +17,13 @@ public class ShopTowerButton : MonoBehaviour, IDragHandler, IEndDragHandler {
 	[SerializeField] GameObject TowerObj;
 	[SerializeField] ShopUI shop;
 
-	private void Start() {
-		canDrag = true;
-	}
+    [SerializeField] private StatManager statManager;
 
-	private void Awake() {
+    private void Start() {
+		canDrag = true;
+    }
+
+    private void Awake() {
 		item = gameObject;
 		itemRectTransform = item.GetComponent<RectTransform>();
 		originalPosition = itemRectTransform.position;
@@ -61,7 +63,9 @@ public class ShopTowerButton : MonoBehaviour, IDragHandler, IEndDragHandler {
 
 	protected void Drop(PointerEventData eventData) {
 		shop.buyTower(TowerObj.GetComponent<Turret>(), nodeToSpawn);
-	}
+        // Add To Stats
+        statManager.AddToStat("TowerTotal", 1);
+    }
 
-	public void Press() {}
+    public void Press() {}
 }
