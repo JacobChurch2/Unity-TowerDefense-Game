@@ -63,5 +63,4 @@ public class Turret : Ally
         go.GetComponent<Projectile>().SetProjectile(CurrentTarget, _damage ,
             _firingPoint , Radius);
     }
-
 }
