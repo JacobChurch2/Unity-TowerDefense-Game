@@ -28,8 +28,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] 
     private StatManager statManager;
     
-    [SerializeField]
-    private GameObject winScreen;
+   
 
 
     private void Awake()
@@ -81,7 +80,6 @@ public class WaveManager : MonoBehaviour
         {
             //NO MORE WAVES
             Debug.Log("All the waves has finished .");
-            winScreen?.SetActive(true);
             LastWave = true;
         }
     }

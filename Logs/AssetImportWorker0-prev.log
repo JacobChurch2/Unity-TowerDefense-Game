@@ -1,29 +1,29 @@
 Using pre-set license
 Built from '6000.0/staging' branch; Version is '6000.0.32f1 (b2e806cf271c) revision 11724806'; Using compiler version '193933523'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 32545 MB
+OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'en' Physical Memory: 32547 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\6000.0.32f1\Editor\Unity.exe
+C:\Users\jrowe\Unity Hub\6000.0.32f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/School/Q10/ExsitingCode/TheProject/Unity-TowerDefense-Game
+C:/Users/jrowe/OneDrive - Neumont College of Computer Science/Documents/Cloned_Folder/Unity-TowerDefense-Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54528
+49316
 -job-worker-count
 9
 -background-job-worker-count
 8
 -gc-helper-count
 1
-Successfully changed project path to: C:/School/Q10/ExsitingCode/TheProject/Unity-TowerDefense-Game
-C:/School/Q10/ExsitingCode/TheProject/Unity-TowerDefense-Game
+Successfully changed project path to: C:/Users/jrowe/OneDrive - Neumont College of Computer Science/Documents/Cloned_Folder/Unity-TowerDefense-Game
+C:/Users/jrowe/OneDrive - Neumont College of Computer Science/Documents/Cloned_Folder/Unity-TowerDefense-Game
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -59,18 +59,18 @@ C:/School/Q10/ExsitingCode/TheProject/Unity-TowerDefense-Game
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [15432]  Target information:
+Player connection [38752]  Target information:
 
-Player connection [15432]  * "[IP] 192.168.64.1 [Port] 0 [Flags] 2 [Guid] 1722750132 [EditorId] 1722750132 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-DTV7RJMP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [38752]  * "[IP] 169.254.48.228 [Port] 0 [Flags] 2 [Guid] 3400242827 [EditorId] 3400242827 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-C20UMOLM) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [15432]  * "[IP] 192.168.209.1 [Port] 0 [Flags] 2 [Guid] 1722750132 [EditorId] 1722750132 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-DTV7RJMP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [38752]  * "[IP] 169.254.12.198 [Port] 0 [Flags] 2 [Guid] 3400242827 [EditorId] 3400242827 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-C20UMOLM) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [15432]  * "[IP] 172.16.100.1 [Port] 0 [Flags] 2 [Guid] 1722750132 [EditorId] 1722750132 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-DTV7RJMP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [38752]  * "[IP] 192.168.204.1 [Port] 0 [Flags] 2 [Guid] 3400242827 [EditorId] 3400242827 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-C20UMOLM) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [15432]  * "[IP] 10.10.16.227 [Port] 0 [Flags] 2 [Guid] 1722750132 [EditorId] 1722750132 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-DTV7RJMP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [38752]  * "[IP] 10.10.16.229 [Port] 0 [Flags] 2 [Guid] 3400242827 [EditorId] 3400242827 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-C20UMOLM) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [15432] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [15432] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [38752] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [38752] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 9
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
@@ -81,66 +81,64 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 7.48 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 9.73 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.32f1 (b2e806cf271c)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.32f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/School/Q10/ExsitingCode/TheProject/Unity-TowerDefense-Game/Assets
+[Subsystems] Discovering subsystems at path C:/Users/jrowe/Unity Hub/6000.0.32f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/jrowe/OneDrive - Neumont College of Computer Science/Documents/Cloned_Folder/Unity-TowerDefense-Game/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
     Renderer: NVIDIA GeForce RTX 3070 Ti Laptop GPU (ID=0x24a0)
     Vendor:   NVIDIA
     VRAM:     8018 MB
-    Driver:   32.0.15.6590
+    Driver:   32.0.15.7216
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.32f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.32f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.32f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56576
+Mono path[0] = 'C:/Users/jrowe/Unity Hub/6000.0.32f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Users/jrowe/Unity Hub/6000.0.32f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Users/jrowe/Unity Hub/6000.0.32f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.32f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.32f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
-Registered in 0.006770 seconds.
-- Loaded All Assemblies, in  0.491 seconds
-[usbmuxd] Start listen thread
-[usbmuxd] Listen thread started
-Native extension for iOS target not found
+Register platform support module: C:/Users/jrowe/Unity Hub/6000.0.32f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Users/jrowe/Unity Hub/6000.0.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Users/jrowe/Unity Hub/6000.0.32f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.006655 seconds.
+- Loaded All Assemblies, in  0.794 seconds
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 297 ms
+Android Extension - Scanning For ADB Devices 527 ms
 Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.791 seconds
-Domain Reload Profiling: 1278ms
-	BeginReloadAssembly (155ms)
+- Finished resetting the current domain, in  1.302 seconds
+Domain Reload Profiling: 2092ms
+	BeginReloadAssembly (262ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (46ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (65ms)
-	LoadAllAssembliesAndSetupDomain (205ms)
-		LoadAssemblies (153ms)
+	RebuildCommonClasses (83ms)
+	RebuildNativeTypeToScriptingClass (23ms)
+	initialDomainReloadingComplete (93ms)
+	LoadAllAssembliesAndSetupDomain (328ms)
+		LoadAssemblies (257ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (200ms)
-			TypeCache.Refresh (198ms)
-				TypeCache.ScanAssembly (181ms)
+		AnalyzeDomain (321ms)
+			TypeCache.Refresh (318ms)
+				TypeCache.ScanAssembly (296ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (792ms)
+	FinalizeReload (1303ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (751ms)
+		SetupLoadedEditorAssemblies (1239ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (460ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (69ms)
-			ProcessInitializeOnLoadAttributes (144ms)
-			ProcessInitializeOnLoadMethodAttributes (73ms)
+			InitializePlatformSupportModulesInManaged (736ms)
+			SetLoadedEditorAssemblies (10ms)
+			BeforeProcessingInitializeOnLoad (124ms)
+			ProcessInitializeOnLoadAttributes (250ms)
+			ProcessInitializeOnLoadMethodAttributes (118ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -150,66 +148,62 @@ Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.869 seconds
-Refreshing native plugins compatible for Editor in 7.06 ms, found 2 plugins.
-Native extension for iOS target not found
+- Loaded All Assemblies, in  1.456 seconds
+Refreshing native plugins compatible for Editor in 13.67 ms, found 2 plugins.
 Native extension for Android target not found
 Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.869 seconds
-Domain Reload Profiling: 1730ms
-	BeginReloadAssembly (211ms)
+- Finished resetting the current domain, in  1.798 seconds
+Domain Reload Profiling: 3244ms
+	BeginReloadAssembly (359ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (9ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (29ms)
-	RebuildCommonClasses (44ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (52ms)
-	LoadAllAssembliesAndSetupDomain (538ms)
-		LoadAssemblies (460ms)
+		CreateAndSetChildDomain (55ms)
+	RebuildCommonClasses (68ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (79ms)
+	LoadAllAssembliesAndSetupDomain (919ms)
+		LoadAssemblies (786ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (210ms)
-			TypeCache.Refresh (156ms)
-				TypeCache.ScanAssembly (134ms)
-			BuildScriptInfoCaches (47ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (870ms)
+		AnalyzeDomain (359ms)
+			TypeCache.Refresh (237ms)
+				TypeCache.ScanAssembly (208ms)
+			BuildScriptInfoCaches (107ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (1799ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (705ms)
+		SetupLoadedEditorAssemblies (1539ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (115ms)
-			ProcessInitializeOnLoadAttributes (362ms)
-			ProcessInitializeOnLoadMethodAttributes (190ms)
+			SetLoadedEditorAssemblies (12ms)
+			BeforeProcessingInitializeOnLoad (325ms)
+			ProcessInitializeOnLoadAttributes (833ms)
+			ProcessInitializeOnLoadMethodAttributes (337ms)
 			AfterProcessingInitializeOnLoad (8ms)
-			EditorAssembliesLoaded (0ms)
+			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 3.13 ms, found 2 plugins.
+		AwakeInstancesAfterBackupRestoration (9ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 43.71 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 22 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 2788 unused Assets / (0.6 MB). Loaded Objects now: 3256.
-Memory consumption went from 82.4 MB to 81.8 MB.
-Total: 7.610100 ms (FindLiveObjects: 0.266700 ms CreateObjectMapping: 0.162000 ms MarkObjects: 6.568000 ms  DeleteObjects: 0.612400 ms)
+Unloading 2788 unused Assets / (1.7 MB). Loaded Objects now: 3256.
+Memory consumption went from 82.4 MB to 80.7 MB.
+Total: 33.305000 ms (FindLiveObjects: 0.642100 ms CreateObjectMapping: 0.606400 ms MarkObjects: 28.180600 ms  DeleteObjects: 3.872900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 326907.963059 seconds.
-  path: Assets/Prefabs/Fight/Weapons/TankTurret Variant.prefab
-  artifactKey: Guid(8882f15a7ec5b854397497f74cf1dbaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Fight/Weapons/TankTurret Variant.prefab using Guid(8882f15a7ec5b854397497f74cf1dbaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8dedeb2fddc0449b14e1977c60bd4baa') in 0.114726 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 86
+  Time since last request: 626100.912216 seconds.
+  path: Assets/SimpleFX/Prefabs/FX_TireSmoke.prefab
+  artifactKey: Guid(d7bf18dd20422304ea868e95c3518f19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SimpleFX/Prefabs/FX_TireSmoke.prefab using Guid(d7bf18dd20422304ea868e95c3518f19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fe9ad8c83a61ac0b40d5dfac9834d9b2') in 0.2942341 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
 
-========================================================================
-Received Import Request.
-  Time since last request: 2.768621 seconds.
-  path: Assets/Prefabs/Fight/Weapons/SniperTurret Variant.prefab
-  artifactKey: Guid(837c9ef95438f7d45bac79a7e65c15ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Fight/Weapons/SniperTurret Variant.prefab using Guid(837c9ef95438f7d45bac79a7e65c15ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a3ba7802f04931c5df049d061f7a3900') in 0.0158438 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
-
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

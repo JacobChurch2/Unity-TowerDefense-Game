@@ -4400,3 +4400,19 @@ Memory consumption went from 83.4 MB to 82.7 MB.
 Total: 17.205900 ms (FindLiveObjects: 0.306500 ms CreateObjectMapping: 0.233700 ms MarkObjects: 15.316700 ms  DeleteObjects: 1.346700 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 1841.893333 seconds.
+  path: Assets/Scenes/TitleScreen.unity
+  artifactKey: Guid(bf80e42c8bd963e47bae26a65bfd63a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TitleScreen.unity using Guid(bf80e42c8bd963e47bae26a65bfd63a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8773158f5c1b90183cb4002b57165a0b') in 0.0327963 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.006901 seconds.
+  path: Assets/Scenes/MainScene.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a05bbce751d58a2e4fc449825d8276b8') in 0.0005341 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
