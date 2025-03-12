@@ -8,11 +8,11 @@ public class WaveManager : MonoBehaviour
     public WaveStruct Wave;
 
     [Header("Timing")]
-    public float CountDownTimer = 10f;
-    public float InitialCountDown = 3f;
-    public float WaveDelay = 2f;
+    public float CountDownTimer;
+    public float InitialCountDown;
+    public float WaveDelay;
     [SerializeField]
-    private float _spawnDelay = 1f;
+    private float _spawnDelay;
 
     [Header("Wave Details")]
     private int _waveIndex = 0;
@@ -25,14 +25,22 @@ public class WaveManager : MonoBehaviour
 
     private WaitForSeconds _enemySpawnDelay;
 
+    [Obsolete]
+    private bool AreAllEnemiesDefeated()
+    {
+        return GameObject.FindObjectsOfType<Enemy>().Length == 0;
+    }
+
     public void IncreaseDifficulty()
     {
         //Lower the time between waves
 
-        CountDownTimer = Mathf.Max(CountDownTimer * 0.9f, 2f);
+        CountDownTimer = Mathf.Max(CountDownTimer * 0.95f, 2f);
         //InitialCountDown = Mathf.Max(InitialCountDown * 0.9f, 1f);
-        WaveDelay = Mathf.Max(WaveDelay * 0.85f, 0.5f);
-        _spawnDelay = Mathf.Max(_spawnDelay * 0.9f, 0.25f);
+        WaveDelay = Mathf.Max(WaveDelay * 0.8f, .5f);
+        _spawnDelay = Mathf.Max(_spawnDelay * 0.95f, 0.5f);
+
+        //_waveIndex++;
     }
 
     private void Awake()
@@ -52,7 +60,7 @@ public class WaveManager : MonoBehaviour
         if (_waveIndex != Wave.Waves.Count)
         {
             LastWave = false;
-            if (_countDownTimer <= 0 && !_isWaveSpawned)
+            if ( (_countDownTimer <= 0 && !_isWaveSpawned && AreAllEnemiesDefeated()) || (_countDownTimer <= -20 && !_isWaveSpawned) )
             {
                 SpawnWave();
                 _isWaveSpawned = true;
@@ -116,7 +124,8 @@ public class WaveManager : MonoBehaviour
             }
         }
 
-        //WaveDelay += stopwatch * _waveIndex;
+        yield return new WaitForSeconds(WaveDelay);
+        _waveIndex++;
 
     }
 
