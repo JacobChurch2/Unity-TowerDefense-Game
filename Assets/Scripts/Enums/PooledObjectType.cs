@@ -7,5 +7,6 @@
     BlackEnemy = 4,
     PurpleEnemy = 5,
     GreenEnemy = 6,
-    YellowEnemy = 7
+    YellowEnemy = 7,
+    BombBullet = 8
 }

@@ -83,18 +83,53 @@ public class Projectile : MonoBehaviour, IPooledObject
         _allyRadius = rad;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Explode()
     {
+        float explosionRadius = 5f; // Adjust explosion radius as needed
+        float explosionForce = 500f; // Adjust force if physics is applied
 
-        int enemy = 1 << LayerMask.NameToLayer("Enemy");
-        int temp = 1 << other.gameObject.layer;
+        Collider[] hitEnemies = Physics.OverlapSphere(transform.position, explosionRadius);
 
-        if (temp == enemy)
+        foreach (Collider col in hitEnemies)
         {
-            Hit();
-            Despawn();
+            Health enemyHealth = col.GetComponent<Health>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(Damage);
+            }
+
+            Rigidbody enemyRb = col.GetComponent<Rigidbody>();
+            if (enemyRb != null)
+            {
+                enemyRb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
+            }
         }
 
+        // (Optional) Spawn explosion effect
+        GameObject explosionEffect = ObjectPooler.Instance.SpawnFromPool(
+            PooledObjectType.BlueExplosion, transform.position, Quaternion.identity);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        int enemyLayer = 1 << LayerMask.NameToLayer("Enemy");
+        int otherLayer = 1 << other.gameObject.layer;
+
+        if (otherLayer == enemyLayer)
+        {
+            if (Type == PooledObjectType.BombBullet)
+            {
+                Explode();
+            }
+            else
+            {
+                Hit();
+            }
+
+            Despawn();
+        }
+    }
+
+
 
 }
