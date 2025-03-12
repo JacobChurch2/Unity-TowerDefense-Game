@@ -1,32 +1,35 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour {
     [SerializeField] TextMeshProUGUI moneyTxt;
     [SerializeField] Currency money;
+    [SerializeField] Button toggleBtn;
 
     public bool sell = false;
-
+    [SerializeField] private StatManager statManager;
     void Start() {
         updateMoney();
     }
 
-	private void Update()
-	{
+	private void Update() {
 		updateMoney();
 	}
 
 	public void ToggleClick(GameObject toggleObj) {
         toggleObj.SetActive(!toggleObj.activeSelf);
-        GetComponent<RectTransform>().position = (toggleObj.activeSelf) ? new Vector3(200, 0, 0) : new Vector3(0, 0, 0);
+        toggleBtn.GetComponent<RectTransform>().anchoredPosition = (toggleObj.activeSelf) ? new Vector3(-189, 264, -144) : new Vector3(-400, 264, -144);
     }
 
     public void buyTower(Turret turret, NodeSpot spawnNode) {
         sell = false;
         if (turret.Cost <= money.Amount && !spawnNode.hasTurret) {
-            Instantiate(turret.gameObject, spawnNode.gameObject.transform.position, Quaternion.identity);
-            spawnNode.curTurret = turret;
+            GameObject copy = Instantiate(turret.gameObject, spawnNode.gameObject.transform.position, Quaternion.identity);
+            spawnNode.curTurret = copy.GetComponent<Turret>();
             updateMoney(-turret.Cost);
+            // Add To Stats
+            statManager.AddToStat("MoneySpentTotal", turret.Cost);
             spawnNode.hasTurret = true;
         }
     }
@@ -37,8 +40,7 @@ public class ShopUI : MonoBehaviour {
 
     public void sellTower(NodeSpot spawnNode) {
         if (sell) {
-            updateMoney(spawnNode.curTurret.Cost / 2);
-            Destroy(spawnNode.curTurret.gameObject);
+            updateMoney(spawnNode.curTurret.GetComponent<Turret>().Cost / 2);
             spawnNode.hasTurret = false;
             sell = false;
         }

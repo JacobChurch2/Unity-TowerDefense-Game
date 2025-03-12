@@ -1,5 +1,6 @@
 ﻿using UnityEditor.SearchService;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public abstract class Enemy : Actor,IPooledObject
 {
@@ -20,7 +21,10 @@ public abstract class Enemy : Actor,IPooledObject
     public abstract PathManager manager { get; set; }
 
     public abstract PooledObjectType type { get; set; }
-     
+
+    [SerializeField] 
+    private StatManager statManager;
+
     public virtual void Start()
     {
         WaypointIndex = 0;
@@ -76,6 +80,8 @@ public abstract class Enemy : Actor,IPooledObject
             {
                 TheMoney.Amount += prizeMoney;
             }
-		} 
+            // Add To Stats
+            statManager.AddToStat("EnemySlainTotal", 1);
+        } 
 	}
 }

@@ -19,8 +19,14 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField]
 	End end;
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
+
+    [SerializeField]
+    private GameObject winScreen;
+
+    [SerializeField]
+    private GameObject loseScreen;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
 	{
 		state = GameState.Start;
 	}
@@ -43,10 +49,12 @@ public class GameManager : MonoBehaviour
 				break;
 			case GameState.Win:
 				print("Win");
-				break;
+                winScreen?.SetActive(true);
+                break;
 			case GameState.Lose:
 				print("lose");
-				break;
+                loseScreen?.SetActive(true);
+                break;
 			default:
 				break;
 		}
