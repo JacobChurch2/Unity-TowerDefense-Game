@@ -6,7 +6,7 @@ public class Turret : Ally
     [SerializeField] private protected Transform _firingPoint;
 
     [SerializeField]
-    private float _damage = 1f;
+    protected float _damage = 1f;
 
     private protected virtual float _fireRate
     {
@@ -26,6 +26,9 @@ public class Turret : Ally
     }
 
     private float _fireCoolDown;
+
+    [SerializeField]
+    public int Cost;
 
     public virtual void Start()
     {
