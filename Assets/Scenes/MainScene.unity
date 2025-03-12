@@ -16352,6 +16352,7 @@ MonoBehaviour:
   InitialCountDown: 5
   WaveDelay: 15
   _spawnDelay: 1
+  WavesBeat: {fileID: 1245419746}
 --- !u!1 &1712751747
 GameObject:
   m_ObjectHideFlags: 0

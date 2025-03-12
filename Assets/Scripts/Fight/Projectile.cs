@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviour, IPooledObject
 
     public void Hit()
     {
+        if(_target == null) return;
         Health tempHealth = _target.GetComponent<Health>();
         if (tempHealth != null)
         {
